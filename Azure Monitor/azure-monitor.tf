@@ -1,8 +1,8 @@
 # Log Analytics Workspace (Core of Azure Monitor)  (collect logs)
 resource "azurerm_log_analytics_workspace" "law" {
   name                = var.log_analytics_workspace_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = var.location
+  resource_group_name = var.resource_group_name
   sku                 = "PerGB2018"
   retention_in_days   = 30
 }
@@ -10,7 +10,7 @@ resource "azurerm_log_analytics_workspace" "law" {
 # Action Group (for alerts - email) (send notification)
 resource "azurerm_monitor_action_group" "action" {
   name                = var.action_group_name
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = var.resource_group_name
   short_name          = "demoAG"
 
   email_receiver {
@@ -22,8 +22,8 @@ resource "azurerm_monitor_action_group" "action" {
 # Metric Alert (CPU usage example) (check condition)
 resource "azurerm_monitor_metric_alert" "cpu_alert" {
   name                = var.alert_name
-  resource_group_name = azurerm_resource_group.rg.name
-  scopes              = [azurerm_linux_virtual_machine.vm.id] # Add VM or resource ID here
+  resource_group_name = var.resource_group_name
+  scopes              = [var.vm_id] # Add VM or resource ID here
   description         = "Alert when CPU usage is high"
   severity            = 3
   frequency           = "PT1M"

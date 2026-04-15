@@ -16,3 +16,13 @@ output "vnet_id" {
 output "subnet_id" {
   value = azurerm_subnet.subnet.id
 }
+
+# Network Interface ID
+output "nic_id" {
+  value = azurerm_network_interface.nic.id
+}
+
+# Public IP Address
+output "public_ip_address" {
+  value = azurerm_public_ip.pip.ip_address
+}

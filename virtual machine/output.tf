@@ -7,8 +7,3 @@ output "vm_id" {
 output "vm_name" {
   value = azurerm_linux_virtual_machine.vm.name
 }
-
-# Public IP Address
-output "public_ip_address" {
-  value = azurerm_public_ip.pip.ip_address
-}
