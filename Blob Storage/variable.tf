@@ -12,3 +12,11 @@ variable "blob_name" {
   type    = string
   default = "sample-file.zip"
 }
+
+variable "resource_group_name" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}

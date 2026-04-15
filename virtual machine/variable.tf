@@ -12,3 +12,11 @@ variable "admin_password" {
   type    = string
   default = "admin@1234"
 }
+
+variable "resource_group_name" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}

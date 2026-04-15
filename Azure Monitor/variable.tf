@@ -17,3 +17,11 @@ variable "alert_email" {
   type    = string
   default = "dikshaturkat2022@gmail.com"
 }
+
+variable "resource_group_name" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}
