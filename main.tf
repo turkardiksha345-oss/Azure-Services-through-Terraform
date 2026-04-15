@@ -1,3 +1,7 @@
+provider "azurerm" {
+  features {}
+}
+
 module "rg" {
   source = "./Resource group"
 }
