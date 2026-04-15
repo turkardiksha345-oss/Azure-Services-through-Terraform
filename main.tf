@@ -18,7 +18,7 @@ module "vnet" {
 }
 
 module "vm" {
-  source = "./Virtual machine"
+  source = "./virtual machine"
 
   resource_group_name   = module.rg.rg_name
   location              = module.rg.rg_location
