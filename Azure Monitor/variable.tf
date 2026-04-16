@@ -29,3 +29,40 @@ variable "location" {
 variable "vm_id" {
   type = string
 }
+
+variable "sku" {
+  type    = string
+  default = "PerGB2018"
+}
+
+variable "retention_in_days" {
+  type    = number
+  default = 30
+}
+
+variable "short_name" {
+  type    = string
+  default = "demo-short-name"
+}
+
+variable "threshold" {
+  type    = number
+  default = 50
+}
+
+variable "frequency" {
+  type    = string
+  default = "PT1M"
+  
+}
+
+variable "window_size" {
+  type    = string
+  default = "PT5M"
+}
+
+variable "severity" {
+  type    = number
+  default = 3
+}
+

@@ -3,8 +3,8 @@ resource "azurerm_storage_account" "storage" {
   name                     = var.storage_account_name # must be globally unique
   resource_group_name      = var.resource_group_name
   location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_tier             = var.account_tier
+  account_replication_type = var.account_replication_type
 
  # allow_blob_public_access = false
 }
